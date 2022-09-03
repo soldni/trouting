@@ -9,7 +9,7 @@ P = ParamSpec("P")
 R = TypeVar("R")
 
 
-class route(Generic[P, R]):
+class trouting(Generic[P, R]):
     """An interface is a decorator that select the correct method to call
     based on the types of the arguments. For example, in the class below,
     the method `add_one` is customized for the type `int` and `str`, but
@@ -50,7 +50,7 @@ class route(Generic[P, R]):
 
     def add_interface(
         self, **kwargs: type
-    ) -> Callable[[Callable[Concatenate[Any, P], R]], "route"]:
+    ) -> Callable[[Callable[Concatenate[Any, P], R]], "trouting"]:
         """Add an interface to the Interface for specific arguments and types.
 
         Args:
@@ -60,7 +60,7 @@ class route(Generic[P, R]):
 
         def _add_interface(
             method: Callable[Concatenate[Any, P], R]
-        ) -> "route":
+        ) -> "trouting":
             self.interfaces.setdefault(tuple(kwargs.keys()), {})[
                 tuple(kwargs.values())
             ] = method

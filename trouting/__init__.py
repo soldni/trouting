@@ -1,3 +1,3 @@
-from .trouting import route
+from .core import trouting
 
-__all__ = ['route']
+__all__ = ['trouting']

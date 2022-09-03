@@ -2,7 +2,7 @@ import unittest
 from typing import Any, Type
 
 
-from trouting.trouting import route
+from trouting.core import trouting
 
 
 class Mapper:
@@ -10,7 +10,7 @@ class Mapper:
     InterfaceMapper is a base class for all interface mappers.
     """
 
-    @route
+    @trouting
     def map(self, value: Any) -> Type[Any]:
         raise NotImplementedError()
 
@@ -24,7 +24,7 @@ class Mapper:
 
 
 class Mapper2(Mapper):
-    @route
+    @trouting
     def map(self, value: Any) -> Type[Any]:
         return super().map(value)
 
