@@ -40,7 +40,7 @@ fi
 
 
 # no need to keep all previous builds
-rm -rf dist/* build/*
+rm -rf dist/* build/* *.egg.info
 
 # go back to original dir
 cd ${CURRENT_DIR}
