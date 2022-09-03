@@ -1,8 +1,10 @@
 # trouting
 
-[![logo](https://raw.githubusercontent.com/soldni/trouting/master/inst/logo.png)]
+[![logo](https://github.com/soldni/trouting/raw/main/static/logo.png)]
 
-Trouting (short for Type Routing) is a library that contains a simple class decorator that allows to define multiple interfaces for a method that behave differently depending on input types. To install for PyPI trouting, run:
+Trouting (short for Type Routing) is a simple class decorator that allows to define multiple interfaces for a method that behave differently depending on input types.
+
+To install for PyPI trouting, run:
 
 ```bash
 pip install trouting

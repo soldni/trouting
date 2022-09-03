@@ -1,7 +1,7 @@
 [project]
 name = "trouting"
 version = "0.1.0"
-description = "Type Routing (trouting) is a decorator that selects the right method in a class based on the input data type"
+description = "Trouting (short for Type Routing) is a simple class decorator that allows to define multiple interfaces for a method that behave differently depending on input types."
 authors = [
     {name = "Luca Soldaini", email = "luca@soldaini.net" }
 ]
