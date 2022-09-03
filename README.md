@@ -18,8 +18,9 @@ Imagine you want to define a class whose method behaves differently depending on
 
 ```python
 from trouting import trouting
+
 class MyClass:
-    @Interface
+    @trouting
     def add_one(self, a: Any) -> Any:
         # fallback method
         raise TypeError(f"Type {type(a)} not supported")
