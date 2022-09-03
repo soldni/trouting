@@ -1,6 +1,6 @@
-# trouting
+# Trouting
 
-[![logo](https://github.com/soldni/trouting/raw/main/static/logo.png)]
+![logo](https://github.com/soldni/trouting/raw/main/static/logo.png)
 
 Trouting (short for Type Routing) is a simple class decorator that allows to define multiple interfaces for a method that behave differently depending on input types.
 
