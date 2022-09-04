@@ -14,11 +14,11 @@ class Mapper:
     def map(self, value: Any) -> Type[Any]:
         raise NotImplementedError()
 
-    @map.add_interface(value=list)  # type: ignore
+    @map.add_interface(value=list)
     def map_list(self, value: list) -> Type[list]:
         return list
 
-    @map.add_interface(value=dict)  # type: ignore
+    @map.add_interface(value=dict)
     def map_dict(self, value: dict) -> Type[dict]:
         return dict
 
@@ -28,7 +28,7 @@ class Mapper2(Mapper):
     def map(self, value: Any) -> Type[Any]:
         return super().map(value)
 
-    @map.add_interface(value=int)  # type: ignore
+    @map.add_interface(value=int)
     def map_int(self, value: int) -> Type[int]:
         return int
 

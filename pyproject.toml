@@ -1,6 +1,6 @@
 [project]
 name = "trouting"
-version = "0.1.2"
+version = "0.1.3"
 description = "Trouting (short for Type Routing) is a simple class decorator that allows to define multiple interfaces for a method that behave differently depending on input types."
 authors = [
     {name = "Luca Soldaini", email = "luca@soldaini.net" }
@@ -17,11 +17,12 @@ dependencies = [
 "Repository" = "https://github.com/soldni/trouting"
 "Bug Tracker" = "https://github.com/soldni/trouting/issues"
 
-[tool.setuptools.packages.find]
-where = ["."]
-include = ["trouting*"]
-namespaces = false
 
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+smashed = ["py.typed"]
 
 [build-system]
 build-backend = "setuptools.build_meta"
@@ -93,6 +94,3 @@ per-file-ignores = [
     '*.pyi:E302,E305',
     '*.py:E203'
 ]
-
-[tool.setuptools.package-data]
-springs = ["py.typed"]
