@@ -17,6 +17,7 @@ The logo of trouting was generated using [Stable Diffusion](https://github.com/C
 Imagine you want to define a class whose method behaves differently depending on whether the input is a string or an integer. You can do this with trouting as follows:
 
 ```python
+from typing import Any, Union
 from trouting import trouting
 
 class MyClass:
@@ -25,10 +26,10 @@ class MyClass:
         # fallback method
         raise TypeError(f"Type {type(a)} not supported")
 
-    @add_one.add_interface(a=int)
-    def add_one_int(self, a: int) -> int:
-        # a is an int
-        return a + 1
+    @add_one.add_interface(a=(int, float))
+    def add_one_int(self, a: Union[int, float]) -> float:
+        # a is an int or float
+        return float(a + 1)
 
     @add_one.add_interface(a=str)
     def add_one_str(self, a: str) -> str:
@@ -40,7 +41,7 @@ Now, when using `MyClass`, the method `add_one` will behave differently dependin
 
 ```python
 my_class = MyClass()
-my_class.add_one(1) # returns 2
+my_class.add_one(1) # returns 2.0
 my_class.add_one("1") # returns "11"
 my_class.add_one([1]) # raises TypeError
 ```

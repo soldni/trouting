@@ -2,7 +2,7 @@ import importlib.metadata
 
 from .core import trouting
 
-__all__ = ['trouting']
+__all__ = ["trouting"]
 
 try:
     # package has been installed, so it has a version number

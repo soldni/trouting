@@ -1,7 +1,6 @@
 import unittest
 from typing import Any, Type
 
-
 from trouting.core import trouting
 
 
