@@ -95,7 +95,7 @@ class trouting(Generic[P, R]):
         interface_specs = self._expand_interface_combinations(kwargs)
         current_interface_args = tuple(interface_specs[0].keys())
 
-        if not hasattr(self, "bounded_args"):
+        if self.bounded_args is None:
             self.bounded_args = current_interface_args
         elif self.bounded_args != current_interface_args:
             raise ValueError(
