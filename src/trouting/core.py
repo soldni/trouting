@@ -43,7 +43,7 @@ class trouting(Generic[P, R]):
             return a + "1"
     """
 
-    bounded_args: Tuple[str, ...]
+    bounded_args: Union[Tuple[str, ...], None]
     interfaces: Dict[Tuple[type, ...], Callable[Concatenate[Any, P], R]]
 
     def __init__(
@@ -56,6 +56,7 @@ class trouting(Generic[P, R]):
                 default method if no matching interface is found.
         """
         self.interfaces = {}
+        self.bounded_args = None
         self._interfaced_method = interfaced_method
         self._method_signature = inspect.signature(interfaced_method)
         self._obj = None
@@ -129,6 +130,10 @@ class trouting(Generic[P, R]):
                 "method in an invalid way; If you think you are using this "
                 "library correctly, please file a bug report."
             )
+
+        if self.bounded_args is None:
+            # no interfaces have been added, so we fall back to the default
+            return self._interfaced_method(obj, *args, **kwargs)
 
         sig_vals = self._method_signature.bind(self, *args, **kwargs)
         method_to_call = None

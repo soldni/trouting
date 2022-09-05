@@ -51,5 +51,8 @@ class TestInterface(unittest.TestCase):
         value = ["a", "b", "c"]
         self.assertEqual(mapper.map(value), list)
 
+        value = {"a": 1, "b": 2, "c": 3}
+        self.assertEqual(mapper.map(value), dict)
+
         value = 1
         self.assertEqual(mapper.map(value), int)
