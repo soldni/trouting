@@ -78,7 +78,7 @@ class TestDecorators(TestCase):
 
             with self.assertRaises(TypeError):
                 # Type ignore because this is intentionally wrong
-                @add_one.add_interface(a=str)  # type: ignore
+                @add_one.add_interface(a=str)  # pyright: ignore
                 @staticmethod
                 def add_one_str(a: str) -> str:
                     return a + "1"
