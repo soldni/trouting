@@ -1,6 +1,6 @@
 [project]
 name = "trouting"
-version = "0.3.1"
+version = "0.3.2"
 description = "Trouting (short for Type Routing) is a simple class decorator that allows to define multiple interfaces for a method that behave differently depending on input types."
 authors = [
     {name = "Luca Soldaini", email = "luca@soldaini.net" }
@@ -8,10 +8,9 @@ authors = [
 license = {text = "Apache-2.0"}
 readme = "README.md"
 requires-python = ">=3.8"
-dynamic = ["dependencies"]
-
-[tool.setuptools.dynamic]
-dependencies = {file = ["requirements.txt"]}
+dependencies = [
+    "typing_extensions>=4.3.0"
+]
 
 [project.urls]
 "Homepage" = "https://github.com/soldni/trouting"
