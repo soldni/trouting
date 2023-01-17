@@ -1,6 +1,6 @@
 [project]
 name = "trouting"
-version = "0.3.2"
+version = "0.3.3"
 description = "Trouting (short for Type Routing) is a simple class decorator that allows to define multiple interfaces for a method that behave differently depending on input types."
 authors = [
     {name = "Luca Soldaini", email = "luca@soldaini.net" }
@@ -11,25 +11,20 @@ requires-python = ">=3.8"
 dependencies = [
     "typing_extensions>=4.3.0"
 ]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Utilities",
+    "Typing :: Typed",
+]
 
 [project.urls]
-"Homepage" = "https://github.com/soldni/trouting"
-"Repository" = "https://github.com/soldni/trouting"
-"Bug Tracker" = "https://github.com/soldni/trouting/issues"
-
-
-[tool.setuptools.packages.find]
-where = ["src"]
-
-[tool.setuptools.package-data]
-trouting = ["py.typed"]
-
-[build-system]
-build-backend = "setuptools.build_meta"
-requires = [
-    "setuptools >= 61.0.0",
-    "wheel"
-]
+Homepage = "https://github.com/soldni/trouting"
+Source = "https://github.com/soldni/trouting"
+Tracker = "https://github.com/soldni/trouting/issues"
 
 [project.optional-dependencies]
 dev = [
@@ -44,6 +39,19 @@ dev = [
     "flake8-pyi>=22.8.1",
     "Flake8-pyproject>=1.1.0"
 ]
+
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = [
+    "setuptools >= 61.0.0",
+    "wheel"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+trouting = ["py.typed"]
 
 [tool.black]
 line-length = 79
